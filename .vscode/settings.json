@@ -21,8 +21,8 @@
     "**/.hg/**",
     "**/.svn/**",
     "**/a.css",
-    "**/packages/tailwindcss-better-gradient/index.css",
-    "**/packages/tailwindcss-better-gradient/**/*.css"
+    "**/packages/fadekit/index.css",
+    "**/packages/fadekit/**/*.css"
   ],
   "files.associations": {
     "*.css": "tailwindcss"

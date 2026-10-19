@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for your interest in contributing to `tailwindcss-better-gradient`!
+Thank you for your interest in contributing to `fadekit`!
 
 ## Development Setup
 
@@ -57,7 +57,7 @@ pnpm install
 ```
 .
 ├── packages/
-│   └── tailwindcss-better-gradient/  # Main package
+│   └── fadekit/  # Main package
 │       ├── index.ts                  # TypeScript source
 │       ├── index.css                 # CSS-based plugin
 │       ├── dist/                     # Compiled output
@@ -71,8 +71,8 @@ pnpm install
 
 ### Adding New Utilities
 
-1. Edit `packages/tailwindcss-better-gradient/index.css` for CSS-based utilities
-2. Edit `packages/tailwindcss-better-gradient/index.ts` for JavaScript plugin
+1. Edit `packages/fadekit/index.css` for CSS-based utilities
+2. Edit `packages/fadekit/index.ts` for JavaScript plugin
 3. Test in `apps/playground`
 4. Update README.md if needed
 

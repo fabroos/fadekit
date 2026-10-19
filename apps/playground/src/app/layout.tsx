@@ -1,13 +1,11 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { publicSans, robotoMono } from '@/lib/fonts';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
-
 export const metadata: Metadata = {
-  title: 'Tailwind CSS Better Gradient - Playground',
+  title: 'fadekit — gradients that actually fade',
   description:
-    'Create stunning, smooth gradients with enhanced color control and beautiful transitions',
+    'A Tailwind CSS plugin for eased, banding-free fades. Composable utilities, any color, any curve.',
 };
 
 export default function RootLayout({
@@ -16,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`dark ${publicSans.variable} ${robotoMono.variable}`}>
+      <body className="bg-background text-foreground font-sans antialiased">{children}</body>
     </html>
   );
 }

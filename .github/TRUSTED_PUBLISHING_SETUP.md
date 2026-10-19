@@ -19,7 +19,7 @@ Trusted publishing uses OpenID Connect (OIDC) to authenticate npm publishes dire
 
 ## Step 1: Configure Trusted Publisher on npmjs.com
 
-1. Go to your package on npmjs.com: `https://www.npmjs.com/package/tailwindcss-better-gradient`
+1. Go to your package on npmjs.com: `https://www.npmjs.com/package/fadekit`
 2. Click **Settings** (or go to package settings directly)
 3. Scroll to **"Trusted Publisher"** section
 4. Click **"GitHub Actions"** button
