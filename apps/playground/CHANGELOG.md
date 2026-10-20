@@ -1,5 +1,12 @@
 # playground
 
+## 1.0.10
+
+### Patch Changes
+
+- Updated dependencies [2bf0659]
+  - fadekit@0.3.2
+
 ## 1.0.9
 
 ### Patch Changes
