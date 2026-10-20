@@ -13,8 +13,8 @@ Thank you for your interest in contributing to `fadekit`!
 
 ```bash
 # Clone the repository
-git clone https://github.com/fabroos/tailwindcss-better-gradient.git
-cd tailwindcss-better-gradient
+git clone https://github.com/fabroos/fadekit.git
+cd fadekit
 
 # Install dependencies
 pnpm install

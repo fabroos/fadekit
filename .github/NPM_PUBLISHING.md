@@ -16,7 +16,7 @@ Your package `fadekit` is configured to publish to the **public npm registry** (
 
 ### 2. Add Token to GitHub Secrets
 
-1. Go to your repository: `https://github.com/fabroos/tailwindcss-better-gradient/settings/secrets/actions`
+1. Go to your repository: `https://github.com/fabroos/fadekit/settings/secrets/actions`
 2. Click **New repository secret**
 3. Name: `NPM_TOKEN`
 4. Value: Paste your npm token

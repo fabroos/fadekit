@@ -25,7 +25,7 @@ Trusted publishing uses OpenID Connect (OIDC) to authenticate npm publishes dire
 4. Click **"GitHub Actions"** button
 5. Fill in the form:
    - **Organization or user**: `fabroos`
-   - **Repository**: `tailwindcss-better-gradient`
+   - **Repository**: `fadekit`
    - **Workflow filename**: `release.yml` (must include `.yml` extension)
    - **Environment name**: (leave empty unless using GitHub environments)
 6. Click **"Add trusted publisher"**

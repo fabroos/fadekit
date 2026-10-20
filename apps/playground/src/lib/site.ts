@@ -1,5 +1,5 @@
 export const INSTALL = 'npm i fadekit';
-export const GITHUB_URL = 'https://github.com/fabroos/tailwindcss-better-gradient';
+export const GITHUB_URL = 'https://github.com/fabroos/fadekit';
 export const NPM_URL = 'https://www.npmjs.com/package/fadekit';
 
 export const IMAGE =
