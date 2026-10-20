@@ -1,7 +1,7 @@
 {
-  "name": "tailwindcss-better-gradient",
-  "version": "0.2.1",
-  "description": "A Tailwind CSS plugin for creating beautiful gradient backgrounds with directional control",
+  "name": "fadekit",
+  "version": "0.3.0",
+  "description": "Smooth, eased fades for Tailwind CSS. Gradients without the hard edge.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -19,17 +19,19 @@
   },
   "keywords": [
     "tailwindcss",
-    "plugin",
+    "tailwindcss-plugin",
     "gradient",
     "fade",
-    "background",
+    "easing",
+    "overlay",
+    "scrim",
     "oklch"
   ],
   "author": "fabroos",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fabroos/tailwindcss-better-gradient.git"
+    "url": "git+https://github.com/fabroos/fadekit.git"
   },
   "peerDependencies": {
     "tailwindcss": ">=4.0.0"
@@ -37,5 +39,6 @@
   "devDependencies": {
     "tailwindcss": "^4.0.0",
     "typescript": "^5.9.3"
-  }
+  },
+  "homepage": "https://github.com/fabroos/fadekit#readme"
 }

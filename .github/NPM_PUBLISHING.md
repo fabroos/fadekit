@@ -2,7 +2,7 @@
 
 ## Current Setup: Publishing to npmjs.org (Public npm)
 
-Your package `tailwindcss-better-gradient` is configured to publish to the **public npm registry** (`registry.npmjs.org`), not GitHub Packages.
+Your package `fadekit` is configured to publish to the **public npm registry** (`registry.npmjs.org`), not GitHub Packages.
 
 ## Required Setup
 
@@ -16,7 +16,7 @@ Your package `tailwindcss-better-gradient` is configured to publish to the **pub
 
 ### 2. Add Token to GitHub Secrets
 
-1. Go to your repository: `https://github.com/fabroos/tailwindcss-better-gradient/settings/secrets/actions`
+1. Go to your repository: `https://github.com/fabroos/fadekit/settings/secrets/actions`
 2. Click **New repository secret**
 3. Name: `NPM_TOKEN`
 4. Value: Paste your npm token
@@ -28,7 +28,7 @@ Your `package.json` should have:
 
 ```json
 {
-  "name": "tailwindcss-better-gradient",
+  "name": "fadekit",
   "version": "0.0.8",
   "publishConfig": {
     "access": "public"
@@ -55,7 +55,7 @@ If you want to publish to **GitHub Packages** instead (npm.pkg.github.com):
 
    ```json
    {
-     "name": "@fabroos/tailwindcss-better-gradient",
+     "name": "@fabroos/fadekit",
      "publishConfig": {
        "registry": "https://npm.pkg.github.com"
      }
@@ -95,7 +95,7 @@ Your workflow is configured for npmjs.org:
 
 - Registry: `https://registry.npmjs.org`
 - Token: `NPM_TOKEN` secret
-- Package: `tailwindcss-better-gradient` (unscoped)
+- Package: `fadekit` (unscoped)
 
 ## Troubleshooting
 
@@ -112,7 +112,7 @@ Your workflow is configured for npmjs.org:
 ### Error: "Package name already exists"
 
 - **Cause:** Someone else owns the package name
-- **Fix:** Use a scoped name like `@fabroos/tailwindcss-better-gradient`
+- **Fix:** Use a scoped name like `@fabroos/fadekit`
 
 ## Verification
 

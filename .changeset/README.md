@@ -45,7 +45,7 @@ After running `pnpm changeset`, you'll be prompted to describe your changes. The
 
 ```markdown
 ---
-'tailwindcss-better-gradient': patch
+'fadekit': patch
 ---
 
 Fix gradient stop calculation for better smoothness
@@ -74,7 +74,7 @@ After versioning:
 pnpm release
 
 # Or manually:
-cd packages/tailwindcss-better-gradient
+cd packages/fadekit
 npm publish --access public
 ```
 

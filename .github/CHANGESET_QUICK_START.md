@@ -17,7 +17,7 @@ That's it! Follow the prompts.
    ```
 
 2. **Select package:**
-   - Choose `tailwindcss-better-gradient`
+   - Choose `fadekit`
 
 3. **Select change type:**
    - `patch` - Bug fixes, patches (0.0.9 → 0.0.10)

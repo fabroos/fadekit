@@ -6,7 +6,7 @@ on:
       - main
     paths:
       # Only trigger when package.json version changes (version PR merged)
-      - 'packages/tailwindcss-better-gradient/package.json'
+      - 'packages/fadekit/package.json'
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -44,12 +44,12 @@ jobs:
         id: version-check
         run: |
           # Get current version from package.json
-          CURRENT_VERSION=$(node -p "require('./packages/tailwindcss-better-gradient/package.json').version")
+          CURRENT_VERSION=$(node -p "require('./packages/fadekit/package.json').version")
           echo "Current version: $CURRENT_VERSION"
 
           # Get previous version from git (before this commit)
           if git rev-parse HEAD~1 >/dev/null 2>&1; then
-            PREVIOUS_VERSION=$(git show HEAD~1:packages/tailwindcss-better-gradient/package.json 2>/dev/null | node -p "JSON.parse(require('fs').readFileSync(0)).version" 2>/dev/null || echo "")
+            PREVIOUS_VERSION=$(git show HEAD~1:packages/fadekit/package.json 2>/dev/null | node -p "JSON.parse(require('fs').readFileSync(0)).version" 2>/dev/null || echo "")
             echo "Previous version: $PREVIOUS_VERSION"
             
             if [ "$CURRENT_VERSION" != "$PREVIOUS_VERSION" ] && [ -n "$PREVIOUS_VERSION" ]; then
@@ -71,7 +71,7 @@ jobs:
       - name: Publish to npm
         if: steps.version-check.outputs.version_changed == 'true'
         run: |
-          cd packages/tailwindcss-better-gradient
+          cd packages/fadekit
           npm publish --access public
           # Using OIDC trusted publishing (no NPM_TOKEN needed)
           # If you need to install private dependencies, use a read-only token:
