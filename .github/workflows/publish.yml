@@ -25,17 +25,19 @@ jobs:
         with:
           fetch-depth: 2 # Need at least 2 commits to compare versions
 
-      - name: Setup Node.js 20.x
+      - name: Setup Node.js 24.x
         uses: actions/setup-node@v4
         with:
-          node-version: 20.x
+          node-version: 24.x
           registry-url: 'https://registry.npmjs.org'
 
       - uses: pnpm/action-setup@v4
         # Version is automatically read from package.json packageManager field
 
+      # Trusted publishing needs npm 11.5.1+. Pinned to 11 because npm@latest can require a
+      # newer Node than the runner has (npm 12 needs Node 22.22+/24.15+).
       - name: Ensure npm 11.5.1+ for trusted publishing
-        run: npm install -g npm@latest
+        run: npm install -g npm@11
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
