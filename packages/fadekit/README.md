@@ -23,19 +23,11 @@ Smooth, eased fades for Tailwind CSS. A plain `bg-linear-to-t from-black` change
 npm install fadekit
 ```
 
-### Tailwind CSS v4
+Requires Tailwind CSS v4.
 
 ```css
 @import 'tailwindcss';
 @plugin "fadekit";
-```
-
-### Tailwind CSS v3
-
-```javascript
-module.exports = {
-  plugins: [require('fadekit')],
-};
 ```
 
 ## Usage
@@ -109,17 +101,20 @@ What makes a fade look smooth is how it **ends**. If opacity is still changing w
 
 As a rule of thumb, use `scrim` or `ease-out-*` for overlays, `ease-in-out-*` when the fade sits in the middle of a surface, and avoid `ease-in-*` unless the transparent end is clipped by the element's edge.
 
-### Configuration (v3 / JS config)
+### Configuration
+
+By default the plugin picks the stop count per curve. To fix it for every fade, set `fadekit.steps` in a JS config loaded with `@config`:
+
+```css
+@import 'tailwindcss';
+@config "./tailwind.config.js";
+@plugin "fadekit";
+```
 
 ```javascript
+// tailwind.config.js
 module.exports = {
-  theme: {
-    extend: {
-      // Fixed default stop count instead of automatic
-      fadekit: { steps: 8 },
-    },
-  },
-  plugins: [require('fadekit')],
+  theme: { extend: { fadekit: { steps: 8 } } },
 };
 ```
 

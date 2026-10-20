@@ -20,9 +20,7 @@
     "**/node_modules/**",
     "**/.hg/**",
     "**/.svn/**",
-    "**/a.css",
-    "**/packages/fadekit/index.css",
-    "**/packages/fadekit/**/*.css"
+    "**/.next/**"
   ],
   "files.associations": {
     "*.css": "tailwindcss"

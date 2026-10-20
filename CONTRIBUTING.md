@@ -1,144 +1,41 @@
 # Contributing
 
-Thank you for your interest in contributing to `fadekit`!
+## Setup
 
-## Development Setup
-
-### Prerequisites
-
-- Node.js 20+
-- pnpm 10.20.0+
-
-### Installation
+Requires Node 24 (see `.nvmrc`) and pnpm 10.
 
 ```bash
-# Clone the repository
 git clone https://github.com/fabroos/fadekit.git
 cd fadekit
-
-# Install dependencies
 pnpm install
+pnpm dev # builds the plugin, then starts the landing + playground
 ```
 
-### Development Workflow
-
-1. **Make your changes** in the appropriate package
-2. **Test your changes**:
-
-   ```bash
-   # Build the package
-   pnpm build:package
-
-   # Test in playground
-   pnpm dev
-   ```
-
-3. **Add a changeset**:
-
-   ```bash
-   pnpm changeset
-   ```
-
-   Select the package and describe your changes
-
-4. **Format code**:
-
-   ```bash
-   pnpm format
-   ```
-
-5. **Type check**:
-   ```bash
-   pnpm typecheck
-   ```
-
-## Project Structure
+## Project structure
 
 ```
-.
-├── packages/
-│   └── fadekit/  # Main package
-│       ├── index.ts                  # TypeScript source
-│       ├── index.css                 # CSS-based plugin
-│       ├── dist/                     # Compiled output
-│       └── package.json
-├── apps/
-│   └── playground/                   # Demo app
-└── .changeset/                       # Changeset files
+packages/fadekit/      the plugin (index.ts → dist/)
+apps/playground/       landing page and in-browser playground
+.changeset/            pending release notes
 ```
 
-## Making Changes
+The playground imports the plugin from its TypeScript source, so edits to `packages/fadekit/index.ts` show up in the playground without a rebuild.
 
-### Adding New Utilities
+## Making changes
 
-1. Edit `packages/fadekit/index.css` for CSS-based utilities
-2. Edit `packages/fadekit/index.ts` for JavaScript plugin
-3. Test in `apps/playground`
-4. Update README.md if needed
+1. Branch off `main` and make your change.
+2. Check it: `pnpm typecheck && pnpm build`, and try it in the playground.
+3. If it affects the published package, add a changeset: `pnpm changeset` (patch for fixes, minor for features, major for breaking changes).
+4. Open a pull request.
 
-### Adding Features
+## Releasing
 
-1. Create a feature branch: `git checkout -b feature/my-feature`
-2. Make your changes
-3. Add a changeset: `pnpm changeset`
-4. Test thoroughly
-5. Submit a pull request
+Releases are automated with Changesets and npm trusted publishing (OIDC), so there is no npm token in the repo:
 
-## Code Style
+1. When changesets land on `main`, the **Release** workflow opens a "Version Packages" PR that bumps versions and updates the changelog.
+2. Merging that PR runs the **Publish** workflow, which publishes `fadekit` to npm with provenance.
 
-- Use Prettier for formatting (configured in `.prettierrc`)
-- Follow TypeScript best practices
-- Write clear, descriptive commit messages
-- Add comments for complex logic
+One-time repository setup this relies on:
 
-## Testing
-
-Before submitting:
-
-```bash
-# Build everything
-pnpm build
-
-# Type check
-pnpm typecheck
-
-# Format check
-pnpm format:check
-
-# Test in playground
-pnpm dev
-```
-
-## Submitting Changes
-
-1. **Fork the repository**
-2. **Create a feature branch**
-3. **Make your changes**
-4. **Add a changeset**: `pnpm changeset`
-5. **Commit your changes**: Use conventional commits
-6. **Push to your fork**
-7. **Create a Pull Request**
-
-### Commit Message Format
-
-Use conventional commits:
-
-```
-feat: add new fade-bg utility
-fix: correct gradient calculation
-docs: update README
-chore: update dependencies
-```
-
-## Release Process
-
-Releases are handled automatically via Changesets:
-
-1. Changesets are added for each change
-2. When ready, run `pnpm version` to update versions
-3. Create a release PR
-4. Merge the PR to publish
-
-## Questions?
-
-Feel free to open an issue for questions or discussions!
+- npm: `fadekit` → Settings → Trusted publishing → GitHub Actions, repository `fabroos/fadekit`, workflow `publish.yml`.
+- GitHub: Settings → Actions → General → enable "Allow GitHub Actions to create and approve pull requests" (for the version PR).

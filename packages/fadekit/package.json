@@ -40,5 +40,8 @@
     "tailwindcss": "^4.0.0",
     "typescript": "^5.9.3"
   },
-  "homepage": "https://github.com/fabroos/fadekit#readme"
+  "homepage": "https://github.com/fabroos/fadekit#readme",
+  "bugs": {
+    "url": "https://github.com/fabroos/fadekit/issues"
+  }
 }
