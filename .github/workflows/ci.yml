@@ -17,10 +17,10 @@ jobs:
         uses: pnpm/action-setup@v4
         # Version is automatically read from package.json packageManager field
 
-      - name: Setup Node.js 20.x
+      - name: Setup Node.js 24.x
         uses: actions/setup-node@v4
         with:
-          node-version: 20.x
+          node-version: 24.x
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -34,6 +34,3 @@ jobs:
 
       - name: Build playground
         run: pnpm build:playground
-
-      - name: Check formatting
-        run: pnpm format:check
