@@ -1,6 +1,6 @@
 {
   "name": "fadekit",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Smooth, eased fades for Tailwind CSS. Gradients without the hard edge.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

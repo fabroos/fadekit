@@ -1,5 +1,11 @@
 # fadekit
 
+## 0.3.1
+
+### Patch Changes
+
+- 7ce8709: Update repository and homepage links to github.com/fabroos/fadekit.
+
 ## 0.3.0
 
 ### Minor Changes
